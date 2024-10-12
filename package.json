@@ -1,0 +1,11 @@
+{
+  "name": "appium-example",
+  "type": "module",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
