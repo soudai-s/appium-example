@@ -1,0 +1,5 @@
+pre-commit:
+  commands:
+    biome:
+      glob: "*.{js,ts}"
+      run: bun check:fix --staged && git update-index --again
