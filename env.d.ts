@@ -17,6 +17,7 @@ declare global {
 
       readonly IOS_SETTING_TAB_ID: string;
       readonly IOS_LANGUAGE_SETTING_TEXT: string;
+      readonly IOS_PREFERRED_LANGUAGE_TEXT: string;
 
       readonly FRENCH_TEXT: string;
     }

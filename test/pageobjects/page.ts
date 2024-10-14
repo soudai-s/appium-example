@@ -82,6 +82,13 @@ export abstract class Page {
     return $(process.env.ANDROID_OK_BUTTON_XPATH);
   }
 
+  protected async launchIosApp() {
+    await driver.executeScript("mobile: launchApp", [
+      { bundleId: process.env.IOS_BUNDLE_IDENTIFIER },
+    ]);
+    this.sleep(500);
+  }
+
   private get settingTab() {
     return $(
       driver.isAndroid
