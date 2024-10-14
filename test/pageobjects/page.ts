@@ -7,6 +7,21 @@ export abstract class Page {
     await this.settingTab.click();
   }
 
+  async saveScreenshot(language: string) {
+    await this.sleep();
+    await driver.saveScreenshot(
+      `./tmp/${this.platform.toLowerCase()}-${language}.png`,
+    );
+  }
+
+  protected get platform() {
+    return driver.isAndroid ? "Android" : "iOS";
+  }
+
+  protected async sleep(ms = 1000) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
+
   protected async scrollDownTo(text: string, maxAttempts = 10) {
     const scrollableElementId = await $(
       "android=new UiScrollable(new UiSelector().scrollable(true))",
@@ -35,7 +50,7 @@ export abstract class Page {
       }
 
       // スクロール直後だと描画が間に合わずfalseが返る場合があるためスリープを入れる
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      await this.sleep();
 
       if (await this.elementBy(text).isDisplayed()) {
         break;
