@@ -98,6 +98,10 @@ export abstract class Page {
   }
 
   private get storeTab() {
-    return $(process.env.ANDROID_STORE_TAB_ID);
+    return $(
+      driver.isAndroid
+        ? process.env.ANDROID_STORE_TAB_ID
+        : process.env.IOS_STORE_TAB_ID,
+    );
   }
 }
