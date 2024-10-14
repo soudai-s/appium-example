@@ -1,5 +1,7 @@
+import { albumPage } from "../pageobjects/album.page.ts";
+
 describe("Automation", () => {
   it("takes screenshots in all languages", async () => {
-    await $(process.env.ANDROID_SETTING_TAB_ID).click();
+    await albumPage.goToSetting();
   });
 });
