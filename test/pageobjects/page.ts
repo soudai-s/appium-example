@@ -1,4 +1,8 @@
 export abstract class Page {
+  async goToStore() {
+    await this.storeTab.click();
+  }
+
   async goToSetting() {
     await this.settingTab.click();
   }
@@ -50,5 +54,9 @@ export abstract class Page {
 
   private get settingTab() {
     return $(process.env.ANDROID_SETTING_TAB_ID);
+  }
+
+  private get storeTab() {
+    return $(process.env.ANDROID_STORE_TAB_ID);
   }
 }

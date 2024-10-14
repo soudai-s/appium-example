@@ -5,5 +5,6 @@ describe("Automation", () => {
   it("takes screenshots in all languages", async () => {
     await albumPage.goToSetting();
     await settingPage.switchToFrench();
+    await albumPage.goToStore();
   });
 });
