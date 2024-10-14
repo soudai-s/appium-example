@@ -9,7 +9,11 @@ class SettingPage extends Page {
   }
 
   private get languageSetting() {
-    return this.elementBy(process.env.ANDROID_LANGUAGE_SETTING_TEXT);
+    return this.elementBy(
+      driver.isAndroid
+        ? process.env.ANDROID_LANGUAGE_SETTING_TEXT
+        : process.env.IOS_LANGUAGE_SETTING_TEXT,
+    );
   }
 
   private get frenchOnLanguageModal() {

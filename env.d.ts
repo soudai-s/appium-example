@@ -15,6 +15,9 @@ declare global {
       readonly ANDROID_LANGUAGE_SETTING_TEXT: string;
       readonly ANDROID_OK_BUTTON_XPATH: string;
 
+      readonly IOS_SETTING_TAB_ID: string;
+      readonly IOS_LANGUAGE_SETTING_TEXT: string;
+
       readonly FRENCH_TEXT: string;
     }
   }
