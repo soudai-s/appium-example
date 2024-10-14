@@ -8,7 +8,7 @@ export abstract class Page {
   }
 
   async saveScreenshot(language: string) {
-    await this.sleep();
+    await this.sleep(2000);
     await driver.saveScreenshot(
       `./tmp/${this.platform.toLowerCase()}-${language}.png`,
     );
