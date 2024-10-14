@@ -52,6 +52,17 @@ export const config: WebdriverIO.Config = {
   //
   capabilities: [
     {
+      platformName: "iOS",
+      "appium:automationName": "XCUITest",
+      "appium:deviceName": process.env.IOS_DEVICE_NAME,
+      "appium:platformVersion": process.env.IOS_PLATFORM_VERSION,
+      "appium:udid": process.env.IOS_UNIQUE_DEVICE_IDENTIFIER,
+      "appium:bundleId": process.env.IOS_BUNDLE_IDENTIFIER,
+      "appium:noReset": true,
+      "appium:autoGrantPermissions": true,
+      "appium:showXcodeLog": true,
+    },
+    {
       // capabilities for local Appium web tests on an Android Emulator
       platformName: "Android",
       "appium:deviceName": process.env.ANDROID_DEVICE_NAME,
